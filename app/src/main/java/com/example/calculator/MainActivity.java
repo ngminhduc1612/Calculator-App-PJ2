@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     String formula = "";
     String tempFormula = "";
 
+
     Double right = null;
     boolean checkRight = false;  // check ngoac ben phai cua mu
     Double left = null;
@@ -156,6 +157,32 @@ public class MainActivity extends AppCompatActivity {
         tempFormula = tempFormula.replace(original,changed);
     }
 
+    public void checkSin(){
+        ArrayList<Integer> indexOfSin = new ArrayList<>();
+        for(int i = 0; i < texts.length(); i++)
+        {
+            if (texts.charAt(i) == 's')
+                indexOfSin.add(i);
+        }
+
+        formula = texts;
+        tempFormula = texts;
+        for(Integer index: indexOfSin)
+        {
+            changeSin(index);
+        }
+        formula = tempFormula;
+    }
+
+    private void changeSin(Integer index) {
+        String number;
+        for(int i = index + 4; i < texts.length(); i++){
+            if(isNumeric(texts.charAt(i))){
+
+            }
+        }
+    }
+
 
     public void allClearClick(View view) {
         setWorkings("^");
@@ -179,6 +206,7 @@ public class MainActivity extends AppCompatActivity {
             left_p = true;
         }
     }
+
 
     public void divClick(View view) {
         setWorkings("/");
@@ -238,5 +266,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void zeroClick(View view) {
         setWorkings("0");
+    }
+
+    public void sinClick(View view) {
+        setWorkings("sin(");
+        left_p = false;
     }
 }

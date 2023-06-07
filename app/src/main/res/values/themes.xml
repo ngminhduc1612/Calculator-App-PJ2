@@ -32,4 +32,9 @@
         <item name="android:textSize">32dp</item>
         <item name="android:layout_margin">12dp</item>
     </style>
+
+    <style name="funbutton" parent="opbutton">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
 </resources>
